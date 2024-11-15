@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Alert } from "react-native";
 import React from "react";
 import { useGlobalContext } from "../context/GlobalProvider";
 
@@ -64,7 +64,8 @@ const ButtonComponent = ({ char, style }) => {
             break;
         }
       } catch (error) {
-        console.log(calculation,error);
+        //console.log(calculation,error);
+        Alert.alert('Calculation Error', error);
         setValue('');
         setExpression('0');
         setCalculation('0');
